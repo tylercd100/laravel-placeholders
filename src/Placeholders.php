@@ -63,6 +63,12 @@ class Placeholders
         }
     }
 
+    public function setStyle($start, $end)
+    {
+        $this->setStart($start);
+        $this->setEnd($end);
+    }
+
     public function setThorough($x)
     {
         $this->thorough = $x;

@@ -19,9 +19,15 @@ Now add the following to the `providers` array in your `config/app.php`
 Tylercd100\Placeholders\ServiceProvider::class
 ```
 
-## Usage
-
+and this to the `aliases` array in `config/app.php`
 ```php
+"Placeholders" => Tylercd100\Placeholders\Facades\Placeholders::class,
+```
+
+## Usage
+```php
+use Placeholders;
+
 // Basic
 Placeholders::parse("I like [fruit]s and [veg]s", [
 	'fruit' => 'orange',
@@ -32,4 +38,23 @@ Placeholders::parse("I like [fruit]s and [veg]s", [
 Placeholders::set("fruit", "apple");
 Placeholders::set("veg", "carrot");
 Placeholders::parse("I like [fruit]s and [veg]s"); // I like apples and carrots
+```
+
+### Style
+```php
+// Change the style
+Placeholders::setStyle("{{", "}}");
+Placeholders::parse("I like {{fruit}}s and {{veg}}s", [
+	'fruit' => 'lemon',
+	'veg' => 'string bean'
+]); //I like lemons and string beans
+```
+
+### Errors
+```php
+// Throw an error if one is missed
+Placeholders::setThorough(true) // This is the default
+Placeholders::parse("I like [fruit]s and [veg]s", [
+	'fruit' => 'orange',
+]); //Throws an Exception: Could not find a replacement for [veg]
 ```

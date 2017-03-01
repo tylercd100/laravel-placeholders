@@ -23,6 +23,10 @@ and this to the `aliases` array in `config/app.php`
 ```php
 "Placeholders" => Tylercd100\Placeholders\Facades\Placeholders::class,
 ```
+Then you will need to run these commands in the terminal in order to copy the config file
+```bash
+php artisan vendor:publish --provider="Tylercd100\Placeholders\ServiceProvider"
+```
 
 ## Usage
 ```php

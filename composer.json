@@ -1,6 +1,6 @@
 {
     "name": "tylercd100/laravel-placeholders",
-    "description": "Finds and replaces placeholders in a string",
+    "description": "Find and replace placeholders in a string",
     "keywords": [
         "laravel",
         "placeholders",

@@ -50,7 +50,7 @@ class Placeholders
      * string and then throws an Exception if one exists
      * @param  string $string The string to check
      */
-    protected function catchSkippedPlaceholders(string $string)
+    protected function catchSkippedPlaceholders($string)
     {
         if ($this->getThorough() === true) {
             $matches = [];
